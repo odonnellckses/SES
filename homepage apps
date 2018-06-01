@@ -1,0 +1,90 @@
+<#assign UserLocalService = serviceLocator.findService("com.liferay.portal.service.UserLocalService")>
+<#assign isStaffMember = UserLocalService.hasRoleUser(user.getCompanyId(), "STAFF", user.getUserId(), true) >
+
+
+<style>
+.applink {
+    float: left;
+    width: 12.5%;
+    text-align: center;
+}
+
+.applink-inner {
+    margin: 1px;
+}
+
+.applink-inner img {
+  width: 100%;
+  max-width: 125px;
+}
+
+@media only screen and (max-width : 760px) {
+.applink {
+    width: 25%;
+}
+}
+
+</style>
+
+<nav id="home-page-app-links">
+<div class="row-fluid" style="margin-top:10px;">
+  <div class="applinks">
+    <div class="applink">
+	  <div class="applink-inner">
+	  <a href="http://connect.ses.vic.gov.au" target="_blank">
+      <img src="https://www2.ses.vic.gov.au/documents/381376/1005154/01+-+oims-blue.png/bccb182f-6776-4fe8-976d-9fe84d3d4d4c" alt="OIMS">
+	  </a>
+	  </div>
+    </div>
+    <div class="applink">
+	  <div class="applink-inner">
+	  <a href="https://viper.ses.vic.gov.au" target="_blank">
+      <img src="/documents/381376/1005154/02+-+viper-blue.png/1b6005c2-2a91-470f-b578-958a20bfa94e" alt="Viper">
+	  </a>
+	  </div>
+    </div>
+    <div class="applink">
+	  <div class="applink-inner">
+	  <a href="http://cop.em.vic.gov.au/sadisplay/main.seam" target="_blank">
+      <img src="/documents/381376/1005154/03+-+emcop-blue.png/858f7bee-36bd-4f76-bf57-f3f4ecfa327e" alt="EM-COP Live Environment">
+	  </a>
+	  </div>
+    </div>
+	 <div class="applink">
+	  <div class="applink-inner">
+	  <a href="https://www.floodzoom.vic.gov.au/FIP.Site/Identity/SignInAD" target="_blank">
+      <img src="/documents/381376/1005154/04+-+floodzoom-blue.png/aeb6e5ff-a58a-406b-b7ee-d857f9d4156c" alt="Floodzoom">
+	  </a>
+	  </div>
+    </div>
+    <div class="applink">
+	  <div class="applink-inner">
+	  <a href="<#if isStaffMember>https://360view.ses.vic.gov.au/myses/ssosignin/<#else>https://360view.ses.vic.gov.au/mysesv/ssosignin/</#if>" target="_blank">
+      <img src="/documents/381376/1005154/05+-+360view-blue.png/f68d7eb6-8bd7-4a51-8cfc-29010c3030b6" alt="360View">
+	  </a>
+	  </div>
+    </div>
+    <div class="applink">
+	  <div class="applink-inner">
+	  <a href="https://safegate.ses.vic.gov.au" target="_blank">
+      <img src="/documents/381376/1005154/06+-+safegate-blue.png/cd8abd51-02ad-4ad5-a3b7-19008eb55c1c" alt="Safegate">
+	  </a>
+	  </div>
+    </div>
+    <div class="applink">
+	  <div class="applink-inner">
+	  <a href="https://outlook.office.com/owa/?realm=memberssesvicgov.onmicrosoft.com" target="_blank">
+      <img src="/documents/381376/1005154/07+-+office-365-blue.png/ac52730a-eb4b-4402-8d58-1ccbc74550e2" alt="Office365 Webmail">
+	  </a>
+	  </div>
+    </div>
+    <div class="applink">
+	  <div class="applink-inner">
+	<a href="<#if isStaffMember>https://buyonline.ses.vic.gov.au/PPCEOnlineWAR?IDP=staff<#else>https://buyonline.ses.vic.gov.au/PPCEOnlineWAR?IDP=vol
+</#if>" target="_blank"><img src="/documents/381376/1005154/08+-+buy+online-blue.png/0414dfc9-a634-41a3-add7-e88a5cb0c84e" alt="Buy Online">
+	  </a>
+	  </div>
+    </div>
+  </div>
+</div>
+</nav>
